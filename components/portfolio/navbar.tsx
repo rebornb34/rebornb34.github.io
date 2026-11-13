@@ -60,40 +60,40 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-1">
+            <div className="flex items-center gap-6 lg:gap-8">
               <Link
                 href="/#home"
-                className="text-zinc-600 hover:text-[#1E1E1E] dark:text-zinc-400 dark:hover:text-white transition-colors px-3 py-2 rounded-lg font-medium text-sm hover:bg-zinc-100 dark:hover:bg-[#16191F]"
+                className="text-zinc-600 hover:text-[#1E1E1E] dark:text-zinc-400 dark:hover:text-white transition-colors py-1 font-medium text-sm hover:text-[#3858E9] dark:hover:text-white"
               >
                 Home
               </Link>
               <Link
                 href="/#about"
-                className="text-zinc-600 hover:text-[#1E1E1E] dark:text-zinc-400 dark:hover:text-white transition-colors px-3 py-2 rounded-lg font-medium text-sm hover:bg-zinc-100 dark:hover:bg-[#16191F]"
+                className="text-zinc-600 hover:text-[#1E1E1E] dark:text-zinc-400 dark:hover:text-white transition-colors py-1 font-medium text-sm hover:text-[#3858E9] dark:hover:text-white"
               >
                 About
               </Link>
               <Link
                 href="/#skills"
-                className="text-zinc-600 hover:text-[#1E1E1E] dark:text-zinc-400 dark:hover:text-white transition-colors px-3 py-2 rounded-lg font-medium text-sm hover:bg-zinc-100 dark:hover:bg-[#16191F]"
+                className="text-zinc-600 hover:text-[#1E1E1E] dark:text-zinc-400 dark:hover:text-white transition-colors py-1 font-medium text-sm hover:text-[#3858E9] dark:hover:text-white"
               >
                 Skills
               </Link>
               <Link
                 href="/projects"
-                className="text-zinc-600 hover:text-[#1E1E1E] dark:text-zinc-400 dark:hover:text-white transition-colors px-3 py-2 rounded-lg font-medium text-sm hover:bg-zinc-100 dark:hover:bg-[#16191F]"
+                className="text-zinc-600 hover:text-[#1E1E1E] dark:text-zinc-400 dark:hover:text-white transition-colors py-1 font-medium text-sm hover:text-[#3858E9] dark:hover:text-white"
               >
                 Projects
               </Link>
               <Link
                 href="/blog"
-                className="text-zinc-600 hover:text-[#1E1E1E] dark:text-zinc-400 dark:hover:text-white transition-colors px-3 py-2 rounded-lg font-medium text-sm hover:bg-zinc-100 dark:hover:bg-[#16191F]"
+                className="text-zinc-600 hover:text-[#1E1E1E] dark:text-zinc-400 dark:hover:text-white transition-colors py-1 font-medium text-sm hover:text-[#3858E9] dark:hover:text-white"
               >
                 Blog
               </Link>
               <Link
                 href="/#contact"
-                className="text-zinc-600 hover:text-[#1E1E1E] dark:text-zinc-400 dark:hover:text-white transition-colors px-3 py-2 rounded-lg font-medium text-sm hover:bg-zinc-100 dark:hover:bg-[#16191F]"
+                className="text-zinc-600 hover:text-[#1E1E1E] dark:text-zinc-400 dark:hover:text-white transition-colors py-1 font-medium text-sm hover:text-[#3858E9] dark:hover:text-white"
               >
                 Contact
               </Link>
