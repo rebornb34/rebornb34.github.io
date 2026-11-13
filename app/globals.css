@@ -4,66 +4,67 @@
 
 @layer base {
   :root {
-    /* Cyber-Medical Light Mode (#e8e7e1) */
-    --background: 53 12% 89%;
-    --foreground: 0 0% 10%; /* #1a1a1a */
+    /* WordPress.org Editorial Light Mode */
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 0 0% 12%; /* #1E1E1E */
 
-    --card: 53 12% 92%;
-    --card-foreground: 0 0% 10%;
+    --card: 180 5% 97%; /* #F6F7F7 */
+    --card-foreground: 0 0% 12%; /* #1E1E1E */
 
-    --popover: 53 12% 89%;
-    --popover-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
 
-    --primary: 352 65% 39%; /* #a72334 (Crimson) */
-    --primary-foreground: 53 12% 98%;
+    --primary: 228 80% 57%; /* #3858E9 WordPress Blue */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 53 5% 80%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 240 5% 96%; /* zinc-100 */
+    --secondary-foreground: 0 0% 12%;
 
-    --muted: 53 5% 85%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 180 5% 97%; /* #F6F7F7 */
+    --muted-foreground: 240 4% 46%; /* zinc-500 #71717A */
 
-    --accent: 352 65% 39%;
-    --accent-foreground: 53 12% 98%;
+    --accent: 228 80% 57%; /* #3858E9 */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 53 5% 75%;
-    --input: 53 5% 75%;
-    --ring: 352 65% 39%;
+    --border: 240 6% 90%; /* zinc-200 #E4E4E7 */
+    --input: 240 6% 90%;
+    --ring: 228 80% 57%;
 
-    --radius: 0.5rem;
+    --radius: 0.5rem; /* rounded-lg */
   }
 
   .dark {
-    --background: 222 47% 11%; /* #0B1120 */
-    --foreground: 210 40% 98%;
+    /* High-contrast solid dark mode */
+    --background: 220 18% 7%; /* #0F1115 */
+    --foreground: 240 5% 96%; /* zinc-100 #F4F4F5 */
 
-    --card: 222 47% 12%;
-    --card-foreground: 210 40% 98%;
+    --card: 221 16% 10%; /* #16191F */
+    --card-foreground: 240 5% 96%;
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 18% 7%;
+    --popover-foreground: 240 5% 96%;
 
-    --primary: 221 83% 53%; /* #2563eb */
-    --primary-foreground: 210 40% 98%;
+    --primary: 228 80% 57%; /* #3858E9 */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 28% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 221 16% 14%;
+    --secondary-foreground: 240 5% 96%;
 
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 221 16% 10%; /* #16191F */
+    --muted-foreground: 240 5% 65%; /* zinc-400 #A1A1AA */
 
-    --accent: 188 86% 53%; /* #22d3ee */
-    --accent-foreground: 222 47% 11%;
+    --accent: 228 80% 57%; /* #3858E9 */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 28% 17%;
-    --input: 215 28% 17%;
-    --ring: 221 83% 53%;
+    --border: 240 4% 16%; /* zinc-800 #27272A */
+    --input: 240 4% 16%;
+    --ring: 228 80% 57%;
   }
 }
 
@@ -75,55 +76,61 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply text-foreground;
+    @apply text-foreground bg-background;
   }
 }
 
-/* Custom scrollbar for cyber theme */
+/* Crisp scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B1120;
+  background: #FFFFFF;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #0F1115;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e3a8a;
+  background: #E4E4E7;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: #A1A1AA;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #27272A;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #3F3F46;
 }
 
-.text-gradient {
-  background: linear-gradient(to right, #3b82f6, #22d3ee);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Custom premium Prism dark theme to match site's cyber-security aesthetic */
+/* Custom premium Prism syntax theme supporting both light and dark themes */
 .prose pre code {
   background-color: transparent;
   padding: 0;
   border-radius: 0;
-  color: #f8fafc; /* Slate-50 */
+  color: #1E1E1E;
 }
 
-/* Prism tokens */
+.dark .prose pre code {
+  color: #f4f4f5;
+}
+
+/* Prism tokens - Light Mode (editorial high-contrast) */
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #64748b; /* Slate-500 */
+  color: #71717A;
   font-style: italic;
 }
 
 .token.punctuation {
-  color: #94a3b8; /* Slate-400 */
+  color: #52525B;
 }
 
 .token.namespace {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .token.property,
@@ -133,7 +140,7 @@
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #f43f5e; /* Rose-500 */
+  color: #d9383a;
 }
 
 .token.selector,
@@ -142,33 +149,87 @@
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #10b981; /* Emerald-500 */
+  color: #0d8a56;
 }
 
 .token.operator,
 .token.entity,
 .token.url {
-  color: #38bdf8; /* Sky-400 */
+  color: #0284c7;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #3b82f6; /* Blue-500 */
+  color: #3858E9;
   font-weight: 600;
 }
 
 .token.function,
 .token.class-name {
-  color: #22d3ee; /* Cyan-400 */
+  color: #0891b2;
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-  color: #fbbf24; /* Amber-400 */
+  color: #d97706;
 }
 
+/* Prism tokens - Dark Mode */
+.dark .token.comment,
+.dark .token.prolog,
+.dark .token.doctype,
+.dark .token.cdata {
+  color: #71717A;
+}
+
+.dark .token.punctuation {
+  color: #A1A1AA;
+}
+
+.dark .token.property,
+.dark .token.tag,
+.dark .token.boolean,
+.dark .token.number,
+.dark .token.constant,
+.dark .token.symbol,
+.dark .token.deleted {
+  color: #fb7185;
+}
+
+.dark .token.selector,
+.dark .token.attr-name,
+.dark .token.string,
+.dark .token.char,
+.dark .token.builtin,
+.dark .token.inserted {
+  color: #34d399;
+}
+
+.dark .token.operator,
+.dark .token.entity,
+.dark .token.url {
+  color: #38bdf8;
+}
+
+.dark .token.atrule,
+.dark .token.attr-value,
+.dark .token.keyword {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.dark .token.function,
+.dark .token.class-name {
+  color: #22d3ee;
+}
+
+.dark .token.regex,
+.dark .token.important,
+.dark .token.variable {
+  color: #fbbf24;
+}
 
 /* Sleek thin scrollbar for code blocks */
 pre::-webkit-scrollbar {
@@ -179,13 +240,22 @@ pre::-webkit-scrollbar-track {
   background: transparent;
 }
 pre::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #E4E4E7;
   border-radius: 2px;
 }
 pre::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #A1A1AA;
+}
+.dark pre::-webkit-scrollbar-thumb {
+  background: #27272A;
+}
+.dark pre::-webkit-scrollbar-thumb:hover {
+  background: #3F3F46;
 }
 pre {
   scrollbar-width: thin;
-  scrollbar-color: #334155 transparent;
+  scrollbar-color: #E4E4E7 transparent;
+}
+.dark pre {
+  scrollbar-color: #27272A transparent;
 }

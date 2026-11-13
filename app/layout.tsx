@@ -1,18 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Brian Bundi | Software Development student focused on cybersecurity",
-  description: "Software Development student focused on cybersecurity",
+  title: "Brian Bundi | Software Development & Cybersecurity",
+  description: "Software Development student focused on cybersecurity, building secure systems and technical research.",
   verification: {
     google: "KzYQBWi5PrK_-0pWxvbRvtTe-CrEhbuB_61goJQfAWY",
   },
@@ -20,8 +25,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#e8e7e1" },
-    { media: "(prefers-color-scheme: dark)", color: "#0B1120" },
+    { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
+    { media: "(prefers-color-scheme: dark)", color: "#0F1115" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -48,8 +53,15 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${jetbrainsMono.variable} font-sans antialiased bg-[#e8e7e1] text-[#1a1a1a] dark:bg-[#0B1120] dark:text-gray-100 flex flex-col min-h-screen transition-colors duration-300`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+      <body
+        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-white text-[#1E1E1E] dark:bg-[#0F1115] dark:text-zinc-100 flex flex-col min-h-screen selection:bg-[#3858E9]/15 selection:text-[#3858E9] dark:selection:bg-[#3858E9]/30 dark:selection:text-blue-300 transition-colors duration-200`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
         </ThemeProvider>
       </body>

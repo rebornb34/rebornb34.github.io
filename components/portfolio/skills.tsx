@@ -45,45 +45,56 @@ export function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-[#cbc9c0] dark:border-white/5 relative transition-colors duration-300">
-      <div className="text-center mb-16 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-[#a72334] dark:font-mono dark:text-cyan-400 transition-colors">
-          Skills &amp;&amp; Expertise
+    <section
+      id="skills"
+      className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white dark:bg-[#0F1115] transition-colors duration-200"
+    >
+      <div className="text-center mb-16">
+        <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#3858E9]">
+          Capabilities &amp; Track Record
+        </span>
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1E1E1E] dark:text-white mt-2 mb-4">
+          Skills &amp; Technical Expertise
         </h2>
-        <p className="text-gray-700 dark:text-gray-400 max-w-2xl mx-auto mb-16 transition-colors">
-          A breakdown of my technical proficiencies and hands-on experience in various domains of computer science and cybersecurity.
+        <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto text-base sm:text-lg">
+          A structured breakdown of my technical proficiencies, development toolchains, and hands-on security practices.
         </p>
 
-        <HTBStats />
+        <div className="mt-12">
+          <HTBStats />
+        </div>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-8 mb-20 relative z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
         {stats.map((stat) => (
-          <div key={stat.label} className="flex-1 min-w-[250px] bg-[#f0f0ea] dark:bg-[#111827] border border-[#cbc9c0] dark:border-white/10 p-8 rounded-lg text-center hover:border-[#a72334]/30 dark:hover:border-cyan-500/30 hover:shadow-[0_0_20px_rgba(167,35,52,0.1)] dark:hover:shadow-[0_0_20px_rgba(34,211,238,0.1)] transition-all group">
-            <div className="text-4xl font-bold text-[#a72334] dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-400 dark:to-blue-500 mb-2 group-hover:scale-110 transition-transform inline-block">
+          <div
+            key={stat.label}
+            className="bg-[#F6F7F7] dark:bg-[#16191F] border border-zinc-200 dark:border-zinc-800 p-6 rounded-lg text-center transition-colors"
+          >
+            <div className="text-4xl font-bold text-[#1E1E1E] dark:text-white tracking-tight mb-2">
               {stat.value}
             </div>
-            <div className="text-gray-700 dark:text-gray-400 font-medium uppercase tracking-wider text-sm mt-2 transition-colors">
+            <div className="text-zinc-500 dark:text-zinc-400 font-medium uppercase tracking-wider text-xs">
               {stat.label}
             </div>
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {skillCategories.map((category) => (
           <div
             key={category.title}
-            className="bg-[#f0f0ea] dark:bg-[#111827] border border-[#cbc9c0] dark:border-white/10 rounded-xl p-6 hover:border-[#a72334]/30 dark:hover:border-cyan-500/30 transition-colors"
+            className="bg-[#F6F7F7] dark:bg-[#16191F] border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 transition-colors"
           >
-            <h3 className="text-sm font-mono font-semibold uppercase tracking-widest text-[#a72334] dark:text-cyan-400 mb-4 transition-colors">
+            <h3 className="text-xs font-mono font-semibold uppercase tracking-wider text-[#3858E9] mb-4">
               {category.title}
             </h3>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="px-3 py-1.5 text-sm font-mono rounded-md bg-white dark:bg-[#0B1120] border border-[#cbc9c0] dark:border-white/10 text-gray-800 dark:text-gray-300 hover:border-[#a72334]/40 dark:hover:border-cyan-500/40 hover:text-[#a72334] dark:hover:text-cyan-400 transition-colors cursor-default"
+                  className="px-3 py-1.5 text-xs font-mono rounded-lg bg-white dark:bg-[#0F1115] border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors cursor-default"
                 >
                   {skill}
                 </span>

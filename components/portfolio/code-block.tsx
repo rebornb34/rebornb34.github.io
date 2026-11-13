@@ -22,7 +22,6 @@ export function CodeBlock({ rawCode, language, highlightedHtml }: CodeBlockProps
     }
   };
 
-  // Nice display name for languages
   const getLanguageName = (lang: string) => {
     if (!lang) return "CODE";
     const mapping: { [key: string]: string } = {
@@ -46,21 +45,21 @@ export function CodeBlock({ rawCode, language, highlightedHtml }: CodeBlockProps
   };
 
   return (
-    <div className="my-6 rounded-lg overflow-hidden border border-[#cbc9c0] dark:border-white/10 bg-[#0B1120] shadow-xl transition-all duration-300">
+    <div className="my-6 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-[#F6F7F7] dark:bg-[#16191F] transition-colors duration-200">
       {/* Header bar */}
-      <div className="flex items-center justify-between px-4 py-2 bg-[#1e293b]/50 border-b border-[#cbc9c0]/30 dark:border-white/5 select-none">
-        <span className="font-mono text-xs font-semibold text-gray-400 tracking-wider">
+      <div className="flex items-center justify-between px-4 py-2 bg-zinc-100 dark:bg-[#0F1115] border-b border-zinc-200 dark:border-zinc-800 select-none">
+        <span className="font-mono text-xs font-semibold text-zinc-600 dark:text-zinc-400 tracking-wider">
           {getLanguageName(language)}
         </span>
         <button
           onClick={handleCopy}
-          className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#334155]/50 hover:bg-[#475569] text-gray-300 hover:text-white font-mono text-xs transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-cyan-500"
+          className="flex items-center gap-1.5 px-2.5 py-1 rounded border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-[#16191F] hover:bg-zinc-50 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-mono text-xs transition-colors"
           title="Copy to clipboard"
         >
           {copied ? (
             <>
-              <Check className="w-3.5 h-3.5 text-emerald-400 animate-in zoom-in-50 duration-200" />
-              <span className="text-emerald-400">Copied!</span>
+              <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+              <span className="text-emerald-600 dark:text-emerald-400 font-semibold">Copied!</span>
             </>
           ) : (
             <>
@@ -73,7 +72,7 @@ export function CodeBlock({ rawCode, language, highlightedHtml }: CodeBlockProps
 
       {/* Code body */}
       <div className="overflow-hidden">
-        <pre className="!px-4 !pt-4 !pb-2 !m-0 font-mono text-xs md:text-sm leading-relaxed text-gray-100 bg-[#0B1120] overflow-x-auto whitespace-pre">
+        <pre className="!px-4 !pt-4 !pb-3 !m-0 font-mono text-xs md:text-sm leading-relaxed text-[#1E1E1E] dark:text-zinc-100 bg-[#F6F7F7] dark:bg-[#16191F] overflow-x-auto whitespace-pre transition-colors">
           <code
             dangerouslySetInnerHTML={{ __html: highlightedHtml }}
             className={`language-${language}`}

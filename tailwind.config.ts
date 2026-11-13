@@ -38,31 +38,28 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        wp: {
+          blue: "#3858E9",
+          "blue-hover": "#2545D8",
+          black: "#1E1E1E",
+          gray: "#F6F7F7",
+        },
       },
       fontFamily: {
-        sans: ["var(--font-jetbrains)", "system-ui", "sans-serif"],
+        sans: [
+          "var(--font-inter)",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
         mono: ["var(--font-jetbrains)", "monospace"],
-        serif: ["var(--font-jetbrains)", "serif"],
       },
-      animation: {
-        "text-gradient": "text-gradient 3s linear infinite",
-      },
-      keyframes: {
-        "text-gradient": {
-          "0%, 100%": {
-            "background-size": "200% 200%",
-            "background-position": "left center"
-          },
-          "50%": {
-            "background-size": "200% 200%",
-            "background-position": "right center"
-          }
-        }
-      }
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    require("@tailwindcss/typography"),
   ],
 };
 

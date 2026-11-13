@@ -3,56 +3,61 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center items-center pt-20 px-4 relative overflow-hidden transition-colors duration-300">
-      {/* Decorative gradient background glows */}
-      <div className="absolute top-[20%] left-[20%] w-96 h-96 bg-[#a72334]/10 dark:bg-blue-600/20 rounded-full blur-[100px] pointer-events-none transition-colors duration-500" />
-      <div className="absolute bottom-[20%] right-[20%] w-96 h-96 bg-[#4dd0e1]/30 dark:bg-cyan-600/20 rounded-full blur-[100px] pointer-events-none transition-colors duration-500" />
-      
-      <div className="z-10 flex flex-col items-center text-center space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-        <div className="relative">
-          <Shield className="w-12 h-12 text-[#a72334] dark:text-blue-500 mx-auto mb-6 drop-shadow-[0_0_15px_rgba(167,35,52,0.4)] dark:drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all" />
-          <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#cbc9c0] dark:border-blue-500/30 mx-auto relative group transition-colors">
-            {/* Using a placeholder avatar. Change to next/image later if image is available */}
-            <div className="w-full h-full bg-[#f0f0ea] dark:bg-slate-800 flex items-center justify-center relative overflow-hidden transition-colors">
-               <div className="absolute inset-0 bg-gradient-to-tr from-[#a72334]/10 dark:from-blue-600/40 to-transparent transition-colors" />
-               <span className="text-4xl text-[#1a1a1a] dark:text-gray-500 font-mono group-hover:text-[#a72334] dark:group-hover:text-cyan-400 transition-colors">BB</span>
-            </div>
+    <section
+      id="home"
+      className="min-h-screen flex flex-col justify-center items-center pt-24 pb-16 px-4 bg-white dark:bg-[#0F1115] relative transition-colors duration-200"
+    >
+      <div className="z-10 flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto">
+        <div className="flex flex-col items-center space-y-4">
+          <div className="w-12 h-12 rounded-lg bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900/60 flex items-center justify-center text-[#3858E9]">
+            <Shield className="w-6 h-6" />
+          </div>
+
+          <div className="w-24 h-24 rounded-full overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-[#F6F7F7] dark:bg-[#16191F] flex items-center justify-center">
+            <span className="text-2xl font-bold font-mono text-zinc-700 dark:text-zinc-300">
+              BB
+            </span>
           </div>
         </div>
 
         <div className="space-y-4">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            <span className="font-serif text-[#a72334] dark:font-sans dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-400 dark:to-blue-500 transition-all">
-              Brian Bundi
-            </span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-200 dark:border-zinc-800 bg-[#F6F7F7] dark:bg-[#16191F] text-xs font-mono text-zinc-600 dark:text-zinc-400">
+            <span className="w-2 h-2 rounded-full bg-emerald-500" />
+            Available for security research &amp; development
+          </div>
+
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#1E1E1E] dark:text-white leading-[1.1]">
+            Brian Bundi
           </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-[#1a1a1a] dark:text-gray-100 font-mono tracking-wide transition-colors">
+
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-zinc-700 dark:text-zinc-300 tracking-tight">
             Software Development student focused on cybersecurity
           </h2>
-          <p className="max-w-2xl mx-auto text-lg text-gray-700 dark:text-gray-400 transition-colors">
-            Building secure digital solutions and exploring the frontiers of cybersecurity
+
+          <p className="max-w-2xl mx-auto text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Building secure digital solutions, breaking code ethically, and exploring the frontiers of cybersecurity and systems engineering.
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 pt-4">
-          <Link 
+        <div className="flex flex-col sm:flex-row gap-3 pt-2 w-full sm:w-auto">
+          <Link
             href="/projects"
-            className="px-8 py-3 rounded bg-[#a72334] hover:bg-[#851c2a] dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-medium transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(167,35,52,0.4)] dark:hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+            className="px-6 py-3 rounded-lg bg-[#3858E9] hover:bg-[#2545D8] text-white font-medium text-sm transition-colors text-center"
           >
-            View My Projects
+            View Projects
           </Link>
           <a
             href="/resume.pdf"
-            className="px-8 py-3 rounded bg-[#1a1a1a] text-white hover:bg-black dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 font-medium transition-all hover:scale-105"
+            className="px-6 py-3 rounded-lg bg-white hover:bg-zinc-50 text-[#1E1E1E] border border-zinc-300 dark:bg-[#16191F] dark:hover:bg-zinc-800 dark:text-white dark:border-zinc-700 font-medium text-sm transition-colors text-center"
           >
             Download CV
           </a>
         </div>
       </div>
 
-      <div className="absolute bottom-10 animate-bounce text-[#a72334] dark:text-gray-400 hover:text-[#851c2a] dark:hover:text-cyan-400 transition-colors">
-        <Link href="/#about">
-          <ChevronDown className="w-8 h-8" />
+      <div className="absolute bottom-8 text-zinc-400 dark:text-zinc-500 hover:text-[#1E1E1E] dark:hover:text-white transition-colors">
+        <Link href="/#about" aria-label="Scroll to About section">
+          <ChevronDown className="w-6 h-6 animate-bounce" />
         </Link>
       </div>
     </section>
