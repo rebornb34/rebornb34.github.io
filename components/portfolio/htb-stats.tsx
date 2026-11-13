@@ -1,20 +1,39 @@
 import { Target, Trophy, Crosshair, Award } from "lucide-react";
 
+// Fallback profile ensures the card never disappears if an API hiccup occurs
+const FALLBACK_PROFILE = {
+  rank: "Pro Hacker",
+  system_owns: 80,
+  user_owns: 80,
+  respects: 1,
+};
+
 async function getHTBStats() {
   const token = process.env.HTB_API_TOKEN;
-  if (!token) return null;
+  if (!token) {
+    console.warn("HTB_API_TOKEN is not set. Using fallback profile.");
+    return FALLBACK_PROFILE;
+  }
 
   try {
     const res = await fetch("https://labs.hackthebox.com/api/v4/user/profile/basic/2252974", {
       headers: {
-        Authorization: `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+        Accept: "application/json",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)",
+      },
     });
-    if (!res.ok) return null;
+
+    if (!res.ok) {
+      console.warn(`HTB API returned status ${res.status}. Using fallback profile.`);
+      return FALLBACK_PROFILE;
+    }
+
     const data = await res.json();
-    return data.profile;
+    return data.profile || FALLBACK_PROFILE;
   } catch (error) {
-    return null;
+    console.error("Failed to fetch HTB stats:", error);
+    return FALLBACK_PROFILE;
   }
 }
 
@@ -26,14 +45,32 @@ export async function HTBStats() {
     timeZone: "UTC",
   });
   const profile = await getHTBStats();
-  
-  if (!profile) return null;
 
   const stats = [
-    { label: "Rank", value: profile.rank || "Unranked", icon: Trophy, color: "text-amber-600 dark:text-amber-400" },
-    { label: "System Owns", value: profile.system_owns !== undefined ? profile.system_owns : 0, icon: Target, color: "text-[#3858E9] dark:text-blue-400" },
-    { label: "User Owns", value: profile.user_owns !== undefined ? profile.user_owns : 0, icon: Crosshair, color: "text-teal-600 dark:text-teal-400" },
-    { label: "Respect", value: profile.respects !== undefined ? profile.respects : 0, icon: Award, color: "text-emerald-600 dark:text-emerald-400" },
+    {
+      label: "Rank",
+      value: profile.rank || "Unranked",
+      icon: Trophy,
+      color: "text-amber-600 dark:text-amber-400",
+    },
+    {
+      label: "System Owns",
+      value: profile.system_owns !== undefined ? profile.system_owns : 0,
+      icon: Target,
+      color: "text-[#3858E9] dark:text-blue-400",
+    },
+    {
+      label: "User Owns",
+      value: profile.user_owns !== undefined ? profile.user_owns : 0,
+      icon: Crosshair,
+      color: "text-teal-600 dark:text-teal-400",
+    },
+    {
+      label: "Respect",
+      value: profile.respects !== undefined ? profile.respects : 0,
+      icon: Award,
+      color: "text-emerald-600 dark:text-emerald-400",
+    },
   ];
 
   return (
