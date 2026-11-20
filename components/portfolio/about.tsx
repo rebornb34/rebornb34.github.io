@@ -24,6 +24,7 @@ export function About() {
             <p>
               I combine foundational software engineering with hands-on practice: participating in CTF competitions, analyzing protocols, hardening web applications, and writing technical walkthroughs. Every challenge is an opportunity to strengthen defensive depth.
             </p>
+            <p className="text-sm text-zinc-500 dark:text-zinc-400 italic">Also known as <a href="https://github.com/RebornB34" target="_blank" rel="noopener noreferrer" className="text-[#3858E9] hover:underline">RebornB34</a> on GitHub and Hack The Box.</p>
           </div>
 
           <div className="flex flex-wrap gap-2 pt-2">

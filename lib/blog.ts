@@ -10,6 +10,10 @@ export interface BlogPost {
   date: string;
   description: string;
   content: string;
+  tags?: string[];
+  category?: string;
+  difficulty?: string;
+  readingTime?: string;
 }
 
 export function getSortedPosts(): Omit<BlogPost, 'content'>[] {
@@ -27,6 +31,10 @@ export function getSortedPosts(): Omit<BlogPost, 'content'>[] {
       title: matterResult.data.title || slug,
       date: matterResult.data.date || "Unknown Date",
       description: matterResult.data.description || "",
+      tags: matterResult.data.tags || [],
+      category: matterResult.data.category || "",
+      difficulty: matterResult.data.difficulty || "",
+      readingTime: Math.max(1, Math.ceil(matterResult.content.split(/\s+/).length / 200)) + " min read",
     };
   });
 
@@ -48,6 +56,10 @@ export function getPostBySlug(slug: string): BlogPost | null {
       date: matterResult.data.date,
       description: matterResult.data.description,
       content: matterResult.content,
+      tags: matterResult.data.tags || [],
+      category: matterResult.data.category || "",
+      difficulty: matterResult.data.difficulty || "",
+      readingTime: Math.max(1, Math.ceil(matterResult.content.split(/\s+/).length / 200)) + " min read",
     };
   } catch (e) {
     return null;

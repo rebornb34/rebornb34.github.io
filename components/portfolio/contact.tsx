@@ -1,4 +1,4 @@
-import { Mail, Phone, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Github, Linkedin, Send } from "lucide-react";
 
 export function Contact() {
   return (
@@ -35,19 +35,7 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="flex items-center gap-4 text-zinc-700 dark:text-zinc-300">
-              <div className="w-10 h-10 bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900/60 rounded-lg flex items-center justify-center text-[#3858E9] shrink-0">
-                <Phone className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-xs font-mono text-zinc-500 uppercase tracking-wider">
-                  Phone
-                </div>
-                <div className="font-medium text-[#1E1E1E] dark:text-white">
-                  +254 116 996 557
-                </div>
-              </div>
-            </div>
+
           </div>
 
           <div className="flex gap-3 pt-2">

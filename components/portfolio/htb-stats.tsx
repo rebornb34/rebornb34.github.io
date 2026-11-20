@@ -66,8 +66,8 @@ export async function HTBStats() {
       color: "text-teal-600 dark:text-teal-400",
     },
     {
-      label: "Respect",
-      value: profile.respects !== undefined ? profile.respects : 0,
+      label: "Challenges",
+      value: (profile.user_owns || 0) + (profile.system_owns || 0),
       icon: Award,
       color: "text-emerald-600 dark:text-emerald-400",
     },
@@ -80,9 +80,9 @@ export async function HTBStats() {
           <Target className="w-5 h-5" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-[#1E1E1E] dark:text-white tracking-tight">
-            Hack The Box Activity
-          </h3>
+          <a href="https://app.hackthebox.com/users/2252974" target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-[#1E1E1E] dark:text-white tracking-tight hover:text-[#3858E9] transition-colors">
+            Hack The Box Activity ↗
+          </a>
           <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400 mt-0.5">
             Synced verification: {buildDate}
           </p>

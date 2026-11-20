@@ -21,11 +21,6 @@ export function Hero() {
         </div>
 
         <div className="space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-200 dark:border-zinc-800 bg-[#F6F7F7] dark:bg-[#16191F] text-xs font-mono text-zinc-600 dark:text-zinc-400">
-            <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            Available for security research &amp; development
-          </div>
-
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#1E1E1E] dark:text-white leading-[1.1]">
             Brian Bundi
           </h1>

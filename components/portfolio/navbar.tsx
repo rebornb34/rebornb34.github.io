@@ -52,10 +52,7 @@ export function Navbar() {
               className="text-lg font-bold tracking-tight text-[#1E1E1E] dark:text-white flex items-center gap-2 transition-colors"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-[#3858E9]" />
-              <span>Brian Bundi</span>
-              <span className="text-xs font-mono font-normal text-zinc-400 dark:text-zinc-500 border border-zinc-200 dark:border-zinc-800 px-1.5 py-0.5 rounded">
-                RebornB34
-              </span>
+              <span>RebornB34</span>
             </Link>
           </div>
 
@@ -113,7 +110,7 @@ export function Navbar() {
               )}
             </button>
             <div className="px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded-lg font-mono text-xs text-zinc-700 dark:text-zinc-300 bg-[#F6F7F7] dark:bg-[#16191F]">
-              {time || "00:00:00 AM"}
+              {mounted ? time : "\u00A0"}
             </div>
           </div>
 
@@ -182,7 +179,7 @@ export function Navbar() {
               Contact
             </Link>
             <div className="text-zinc-500 dark:text-zinc-400 px-3 py-2 font-mono text-xs border-t border-zinc-200 dark:border-zinc-800 mt-2">
-              {time}
+              {mounted ? time : "\u00A0"}
             </div>
           </div>
         </div>

@@ -1,24 +1,30 @@
-import { Code, Clock, Sparkles, HardDrive, Shield } from "lucide-react";
+import { Code, Clock, Sparkles, HardDrive, Shield, Github } from "lucide-react";
 
 const PROJECTS = [
   { 
-    name: "Cyber Dashboard UI", 
-    desc: "A responsive React-based security operations center interface with real-time alerting features.",
+    name: "MAC Address Changer", 
+    desc: "A Python CLI tool to spoof MAC addresses on network interfaces for privacy and penetration testing.",
     icon: Shield,
-    tags: ["React", "TailwindCSS", "WebSocket"]
+    tags: ["Python", "Networking", "CLI", "Linux"],
+    github: "https://github.com/RebornB34",
+    status: "Complete",
   },
   { 
-    name: "Packet Sniffer CLI", 
-    desc: "A high-performance Rust command-line tool for analyzing deep network packets.",
+    name: "Cyber Dashboard UI", 
+    desc: "A responsive React-based security operations center interface with real-time alerting features.",
     icon: HardDrive,
-    tags: ["Rust", "Networking", "CLI"]
+    tags: ["React", "TailwindCSS", "WebSocket"],
+    github: "https://github.com/RebornB34",
+    status: "In Development",
   },
   { 
     name: "JWT Cracker", 
-    desc: "An optimization-focused Python script to brute-force weak JWT secrets.",
+    desc: "An optimization-focused Python script to brute-force weak JWT secrets for security testing.",
     icon: Code,
-    tags: ["Python", "Security", "Cryptography"]
-  }
+    tags: ["Python", "Security", "Cryptography"],
+    github: "https://github.com/RebornB34",
+    status: "In Development",
+  },
 ];
 
 export function Projects() {
@@ -36,7 +42,7 @@ export function Projects() {
           Featured Projects
         </h2>
         <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto text-base sm:text-lg">
-          Sneak peek at what I am currently engineering. These projects are actively developed and documented.
+          Security tools and applications I've built. Each project includes source code and documentation.
         </p>
       </div>
 
@@ -53,9 +59,9 @@ export function Projects() {
                   <Icon className="w-5 h-5" />
                 </div>
 
-                <div className="bg-blue-50 dark:bg-blue-950/40 text-[#3858E9] dark:text-blue-400 border border-blue-200 dark:border-blue-900/60 text-xs font-semibold px-2.5 py-1 rounded-md flex items-center gap-1.5 font-mono">
+                <div className={`${project.status === "Complete" ? "bg-green-50 dark:bg-green-950/40 text-green-600 dark:text-green-400 border-green-200 dark:border-green-900/60" : "bg-blue-50 dark:bg-blue-950/40 text-[#3858E9] dark:text-blue-400 border-blue-200 dark:border-blue-900/60"} border text-xs font-semibold px-2.5 py-1 rounded-md flex items-center gap-1.5 font-mono`}>
                   <Clock className="w-3.5 h-3.5" />
-                  <span>In Development</span>
+                  <span>{project.status}</span>
                 </div>
               </div>
 
@@ -69,15 +75,29 @@ export function Projects() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-zinc-200/80 dark:border-zinc-800/80">
-                {project.tags.map((tag, i) => (
-                  <span 
-                    key={i} 
-                    className="text-xs font-mono text-zinc-600 dark:text-zinc-400 bg-white dark:bg-[#0F1115] border border-zinc-200 dark:border-zinc-800 px-2 py-0.5 rounded"
+              <div className="flex flex-wrap items-center justify-between gap-2 mt-auto pt-4 border-t border-zinc-200/80 dark:border-zinc-800/80">
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tags.map((tag, i) => (
+                    <span 
+                      key={i} 
+                      className="text-xs font-mono text-zinc-600 dark:text-zinc-400 bg-white dark:bg-[#0F1115] border border-zinc-200 dark:border-zinc-800 px-2 py-0.5 rounded"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-500 hover:text-[#3858E9] dark:hover:text-white transition-colors"
+                    aria-label={`View ${project.name} on GitHub`}
                   >
-                    {tag}
-                  </span>
-                ))}
+                    <Github className="w-3.5 h-3.5" />
+                    <span>GitHub</span>
+                  </a>
+                )}
               </div>
             </div>
           );

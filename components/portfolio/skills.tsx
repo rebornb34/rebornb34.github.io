@@ -1,14 +1,10 @@
 import { HTBStats } from "./htb-stats";
 
 export function Skills() {
-  const experienceYears = 1;
   const stats = [
-    { label: "Projects Completed", value: "3+" },
-    { label: "Certifications Earned", value: "2+" },
-    {
-      label: Number(experienceYears) === 1 ? "Year of Experience" : "Years of Experience",
-      value: String(experienceYears),
-    },
+    { label: "CTF Challenges Solved", value: "80+" },
+    { label: "Write-ups Published", value: "6" },
+    { label: "Active Platforms", value: "HTB" },
   ];
 
   const skillCategories = [
@@ -40,6 +36,16 @@ export function Skills() {
         "Exploitation",
         "OSINT",
         "CTF Challenges",
+      ],
+    },
+    {
+      title: "Security Tooling",
+      skills: [
+        "Python",
+        "C / C++",
+        "Burp Suite",
+        "Wireshark",
+        "Nmap",
       ],
     },
   ];
@@ -81,7 +87,7 @@ export function Skills() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {skillCategories.map((category) => (
           <div
             key={category.title}

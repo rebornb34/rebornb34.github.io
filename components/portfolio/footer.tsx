@@ -9,13 +9,8 @@ export function Footer() {
     <footer className="py-12 px-6 border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#0F1115] transition-colors duration-200">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-sm">
         <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-          <span className="font-bold text-[#1E1E1E] dark:text-white tracking-tight flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#3858E9]" />
-            Brian Bundi
-          </span>
-          <span className="hidden sm:inline text-zinc-300 dark:text-zinc-700">|</span>
           <p className="text-zinc-500 text-xs sm:text-sm">
-            &copy; {currentYear} RebornB34. Designed with clean editorial aesthetics.
+            &copy; {currentYear} RebornB34
           </p>
         </div>
 

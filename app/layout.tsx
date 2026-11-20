@@ -21,6 +21,19 @@ export const metadata: Metadata = {
   verification: {
     google: "KzYQBWi5PrK_-0pWxvbRvtTe-CrEhbuB_61goJQfAWY",
   },
+  openGraph: {
+    title: "Brian Bundi | Software Development & Cybersecurity",
+    description: "Software Development student focused on cybersecurity, building secure systems and technical research.",
+    url: "https://rebornb34.github.io",
+    siteName: "Brian Bundi Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Brian Bundi | Software Development & Cybersecurity",
+    description: "Software Development student focused on cybersecurity, building secure systems and technical research.",
+  },
 };
 
 export const viewport: Viewport = {
